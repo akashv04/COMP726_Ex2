@@ -1,0 +1,15 @@
+3. Above, where it says STORAGE AT 0X...., what does this mean? Are there differences between someone's Ethereum Address and where your contract is stored?
+
+What Does "STORAGE AT 0X..." Mean?
+"STORAGE AT 0X..." refers to a specific location in the contract’s storage on the Ethereum blockchain. Each contract has its own storage, divided into numbered slots. The 0x... part is a hexadecimal number that points to a particular slot where the contract keeps its data, like numbers or text.
+
+For example, if a contract stores a number, that number is saved in a specific slot in its storage, like at 0x00.
+
+Difference Between an Ethereum Address and Contract Storage
+Yes, there is a difference:
+
+Ethereum Address: This is like a mailing address for either a person’s wallet or a contract. It’s a 20-character string (starting with 0x) that identifies where the contract or account lives on the Ethereum network.
+
+Contract Storage: Once a contract is deployed at its Ethereum address, it has its own storage space for data inside that address. This storage holds things like variables, but it’s separate from the Ethereum address itself.
+
+In simple terms: an Ethereum address is where a contract lives on the network, and the storage is where the contract’s data is kept within that address.
