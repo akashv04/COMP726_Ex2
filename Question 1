@@ -1,0 +1,57 @@
+1. Using remix, modify the Storage.sol contract to store and retrieve a text variable: yourName. How much gas does this use, how does this compare to storing an integer?
+
+
+Original Storage.sol contract (integer storage):
+
+// SPDX-License-Identifier: MIT
+   pragma solidity ^0.8.0;
+
+   contract Storage {
+       uint256 public number;
+
+       function store(uint256 _number) public {
+           number = _number;
+       }
+
+       function retrieve() public view returns (uint256) {
+           return number;
+       }
+   }
+   
+
+Modified Storage.sol contract (text storage):
+  Modifying the contract to store and retrieve a `string` variable (`yourName`).
+
+   // SPDX-License-Identifier: MIT
+   pragma solidity ^0.8.0;
+
+   contract Storage {
+       string public yourName;
+
+       function store(string memory _yourName) public {
+           yourName = _yourName;
+       }
+
+       function retrieve() public view returns (string memory) {
+           return yourName;
+       }
+   }
+
+
+Gas comparison:
+- Gas used to store an integer (`uint256`): 
+     Storing a `uint256` uses a fixed amount of gas since the size of the integer is known (32 bytes).
+For example, storing an integer could cost around **20,000 to 25,000 gas**, depending on the context (network and execution environment).
+   
+- Gas used to store a string (`yourName`): 
+     Storing a `string` typically costs more gas compared to a `uint256` because strings are variable-length data types. 
+     The gas used depends on the length of the string, since more characters mean more storage requirements. 
+     Storing short strings can cost **higher gas**, such as around **30,000 to 50,000 gas**, depending on the length of the string. 
+     Longer strings will incur higher gas costs due to additional storage requirements for each character.
+
+Reason for difference:
+   - Storage of an integer: Storing an integer requires less gas because it only requires 32 bytes (256 bits) of storage, which is a fixed cost.
+   - Storage of a string: Storing a string is more gas-intensive because it involves storing both the length of the string and the actual data. 
+                          The storage cost increases with the length of the string, making it more expensive than storing a simple `uint256` integer.
+
+Storing a string variable consumes more gas than storing an integer because strings require more storage space, especially as their length increases.
