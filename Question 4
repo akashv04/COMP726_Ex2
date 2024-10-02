@@ -1,0 +1,21 @@
+4. Open Owner.sol in Remix. What does this contract do? Why would this be required?
+
+
+What Does the Owner.sol Contract Do?
+Assigns an Owner: When the contract is deployed, the person who deploys it becomes the owner. This is done automatically using msg.sender, which records the deployer’s address.
+
+Restricts Access: It has a feature (modifier called onlyOwner) that ensures only the owner can use certain important functions. This stops others from messing with critical parts of the contract.
+
+Transfers Ownership: The owner can also pass ownership to someone else if needed by calling a function to update the owner’s address.
+
+Why Is This Important?
+Access Control: The owner can control who can use important functions in the contract. This prevents random people from doing things like changing settings or withdrawing funds.
+
+Security: It keeps sensitive functions safe by ensuring only the owner can access them, reducing the risk of unauthorized actions.
+
+Flexibility: If needed, the owner can transfer control to someone else, allowing for smooth management over time.
+
+Why You Need It
+dApps (decentralized apps): Owners are needed to manage the setup and make important changes.
+Token contracts: In cases like token sales, the owner needs to manage how tokens are distributed and handle the funds securely.
+In simple terms, Owner.sol helps protect the contract by making sure only the owner has control over key actions and allows ownership to be passed if needed.
