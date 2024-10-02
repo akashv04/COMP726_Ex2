@@ -1,0 +1,30 @@
+2. Where is a deployed contract stored in Ethereum? Comment on the different gas costs for a) deploying a contract, b) calling a function, and c) storing an address.
+
+
+
+Where is a Deployed Contract Stored in Ethereum?
+When you deploy a contract on Ethereum, it gets stored on the Ethereum blockchain. More specifically, it lives inside the Ethereum Virtual Machine (EVM), where it has its own unique address. All the contract’s code and data are kept in the EVM, making it accessible at any time through its address.
+
+Gas Costs in Ethereum
+Gas is the fee you pay for doing things on Ethereum, like deploying contracts, running functions, or storing data. The more complex the task, the more gas it costs.
+
+a) Deploying a Contract
+Deploying a contract is expensive because you’re writing its code to the blockchain, and storing data takes a lot of gas. The cost depends on how big and complex the contract is. Small contracts might cost around 100,000 gas, while bigger ones can use millions of gas.
+
+b) Calling a Function
+Read-only functions (view/pure): If a function doesn’t change anything, it’s usually free when you run it locally (no gas needed).
+State-changing functions: If a function updates data on the blockchain, it will use gas. Simple functions can cost between 20,000 and 100,000 gas, depending on what they do.
+c) Storing an Address
+Storing data, like an Ethereum address, costs gas too. Since an address takes up space in the contract’s storage, it costs about 20,000 gas to store or update an address. If you're removing an address (setting it to zero), you might get a small gas refund.
+
+Quick Summary of Gas Costs
+Deploying a contract: High gas cost (100,000–1,000,000+ gas) because you're saving code and setting things up.
+Calling a function:
+Read-only functions: Free if run locally.
+State-changing functions: Around 20,000–100,000 gas, depending on complexity.
+Storing an address: Around 20,000 gas to save or update it.
+
+
+
+
+
